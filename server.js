@@ -8,15 +8,15 @@ const PORT = process.env.PORT || 8080;
 // Engedélyezzük a CORS-t
 app.use(cors());
 
-// A dist mappa kiszolgálása
+// Statikus fájlok kiszolgálása (Vite build output mappája)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Az összes egyéb kérésre az index.html-t küldjük (SPA működéshez)
+// Az összes többi útvonalra az index.html-t küldjük (SPA működéshez)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Szerver indítása
 app.listen(PORT, () => {
-  console.log(`Szerver elindult: http://localhost:${PORT}`);
+  console.log(`✅ A szerver elindult: http://localhost:${PORT}`);
 });
