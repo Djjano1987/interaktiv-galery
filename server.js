@@ -1,16 +1,22 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Statikus fájlok kiszolgálása (Vite build output)
-app.use(express.static(path.join(__dirname, "dist")));
+// Engedélyezzük a CORS-t
+app.use(cors());
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+// A dist mappa kiszolgálása
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Az összes egyéb kérésre az index.html-t küldjük (SPA működéshez)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+// Szerver indítása
 app.listen(PORT, () => {
-  console.log(`✅ Szerver fut a következő porton: http://localhost:${PORT}`);
+  console.log(`Szerver elindult: http://localhost:${PORT}`);
 });
