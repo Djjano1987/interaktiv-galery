@@ -2,9 +2,10 @@
   "name": "interaktiv-galeria",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "dev": "vite",
+  "build": "vite build",
+  "start": "node server.js"
+}
   },
   "dependencies": {
     "@react-three/drei": "^9.74.3",
