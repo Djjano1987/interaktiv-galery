@@ -8,17 +8,6 @@
     "build": "vite build",
     "dev": "vite"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Djjano1987/interaktiv-galery.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Djjano1987/interaktiv-galery/issues"
-  },
-  "homepage": "https://github.com/Djjano1987/interaktiv-galery#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
