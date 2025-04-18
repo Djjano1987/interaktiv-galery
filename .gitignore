@@ -42,6 +42,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Vite output directory
+dist/
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -89,13 +92,10 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+# public  # optional: kommenteld ki, ha nem kell
 
 # vuepress build output
 .vuepress/dist
@@ -106,8 +106,6 @@ dist
 
 # vitepress build output
 **/.vitepress/dist
-
-# vitepress cache directory
 **/.vitepress/cache
 
 # Docusaurus cache and generated files
@@ -125,7 +123,7 @@ dist
 # TernJS port file
 .tern-port
 
-# Stores VSCode versions used for testing VSCode extensions
+# VSCode test env
 .vscode-test
 
 # yarn v2
@@ -134,3 +132,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# ---------------------------------------
+# Extra: IDE, OS és általános ignore-ok
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------
+# Saját projekt-specifikus ignore-ok
+# Ne töltsük fel véletlenül az Express buildet vagy a Vite buildet:
+dist/
+node_modules/
